@@ -650,6 +650,9 @@ async def upload(bot: Client, m: Message):
           
             elif "youtube.com" in url or "youtu.be" in url:
                 cmd = f'yt-dlp --cookies youtube_cookies.txt -f "{ytf}" "{url}" -o "{name}".mp4'
+
+            elif "selectionwayrecordedmp4.hranker.com" in url and ".m3u8" in url:
+                 cmd = f'yt-dlp -f "{ytf}" "{url}" -o "{name}.mp4"'
           
             else:
                 cmd = f'yt-dlp -f "{ytf}" "{url}" -o "{name}.mp4"'
